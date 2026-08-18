@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy: #0b1f3f;
+  --color-navy-light: #1c3564;
+  --color-navy-deep: #071630;
+  --color-gold: #c0972e;
+  --color-gold-soft: #e4c572;
+  --color-gold-dark: #a07d20;
+  --color-ink: #101828;
+  --color-muted: #6b7280;
+  --color-cream: #fafaf8;
+  --color-line: #e7e5e0;
+
+  --font-sans: var(--font-montserrat), "Montserrat", ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-playfair), "Playfair Display", Georgia, serif;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes brand-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes brand-star-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-70deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.18) rotate(8deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+@keyframes brand-window-glow {
+  0%,
+  to {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes brand-breathe {
+  0%,
+  to {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+@keyframes brand-lift {
+  0% {
+    transform: translateY(6px);
+  }
+  45% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+  to {
+    transform: translateY(6px);
+  }
+}
+@keyframes brand-pulse-ring {
+  0% {
+    opacity: 0.55;
+    transform: scale(0.82);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+@keyframes brand-sweep {
+  0% {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes brand-fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .animate-brand-draw {
+    animation: brand-draw 1.1s var(--ease-out-soft) forwards;
+  }
+  .animate-brand-star-pop {
+    animation: brand-star-pop 0.7s var(--ease-out-soft) both;
+  }
+  .animate-brand-window-glow {
+    animation: brand-window-glow 2.4s ease-in-out infinite;
+  }
+  .animate-brand-breathe {
+    animation: brand-breathe 3.2s var(--ease-out-soft) infinite;
+  }
+  .animate-brand-lift {
+    animation: brand-lift 2.6s var(--ease-out-soft) infinite;
+  }
+  .animate-brand-pulse-ring {
+    animation: brand-pulse-ring 2.2s var(--ease-out-soft) infinite;
+  }
+  .animate-brand-sweep {
+    animation: brand-sweep 1s var(--ease-out-soft) forwards;
+  }
+  .animate-brand-fade-in-up {
+    animation: brand-fade-in-up 0.5s var(--ease-out-soft) both;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-gold-dark);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .gold-rule {
+    background: linear-gradient(to right, var(--color-gold), var(--color-gold-soft));
+    width: 3.5rem;
+    height: 2px;
+    display: block;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+}
+
+::view-transition-group(*) {
+  animation-duration: 0.35s;
+  animation-timing-function: var(--ease-out-soft);
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.28s;
+}
