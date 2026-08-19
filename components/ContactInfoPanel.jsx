@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock, MessageCircle, ExternalLink } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageCircle, ExternalLink, Instagram } from "lucide-react";
 
 export default function ContactInfoPanel({ className = "space-y-6" }) {
   return (
@@ -56,6 +56,23 @@ export default function ContactInfoPanel({ className = "space-y-6" }) {
             <h3 className="text-sm font-semibold uppercase tracking-[0.1em] text-navy">Email</h3>
             <a href="mailto:Salimkhan3768@gmail.com" className="mt-1.5 block text-sm text-muted transition-colors hover:text-gold-dark">
               Salimkhan3768@gmail.com
+            </a>
+          </div>
+        </li>
+        <li className="flex gap-4 border-t border-line pt-5">
+          <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-navy text-gold">
+            <Instagram className="h-5 w-5" aria-hidden="true" />
+          </span>
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.1em] text-navy">Instagram</h3>
+            <a
+              href="https://www.instagram.com/salimkhan786205/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1.5 inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-gold-dark"
+            >
+              View Profile
+              <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
             </a>
           </div>
         </li>

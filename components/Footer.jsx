@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, MessageCircle, MapPin, Mail } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Mail, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -38,6 +38,15 @@ export default function Footer() {
               >
                 <MessageCircle className="h-4 w-4" aria-hidden="true" />
                 WhatsApp
+              </a>
+              <a
+                href="https://www.instagram.com/salimkhan786205/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-gold hover:text-gold"
+              >
+                <Instagram className="h-4 w-4" aria-hidden="true" />
+                Instagram
               </a>
             </div>
           </div>
